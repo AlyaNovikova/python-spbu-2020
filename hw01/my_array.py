@@ -8,7 +8,7 @@ class Array(object):  # noqa: WPS214
 
     def __init__(self, *init_elements):
         """
-        Initializing an array with a list of elements.
+        Initialize an array with a list of elements.
 
         :param init_elements: elements to be initialized
         """
@@ -34,7 +34,7 @@ class Array(object):  # noqa: WPS214
 
     def __add__(self, other):
         """
-        Adds two arrays.
+        Add two arrays.
 
         Forming an array consisting of the elements of both arrays.
 
