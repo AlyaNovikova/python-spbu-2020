@@ -108,4 +108,4 @@ class Array(object):  # noqa: WPS214
         :param other: the array to compare against
         :return: bool: True if the arrays are equal and False otherwise
         """
-        return self._data == tuple(*iter(other))
+        return self._data == tuple(iter(other))
