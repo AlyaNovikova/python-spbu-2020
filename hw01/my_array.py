@@ -99,7 +99,7 @@ class Array(object):  # noqa: WPS214
         element_index = self.index(element)
         if element_index == -1:
             raise ValueError
-        self._data = self.pop(element_index)  # noqa: WPS110
+        self.pop(element_index)  # noqa: WPS110
 
     def __eq__(self, other: 'Array'):
         """
