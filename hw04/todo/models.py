@@ -4,7 +4,7 @@ class BaseItem(object):
         self.done = False
 
     def __repr__(self):
-        return self.__class__.__name__
+        return self.__class__.__name__[:-4]
 
     def __str__(self):
         return '{0} {1}'.format('+' if self.done else '-', self.__repr__())
@@ -52,7 +52,7 @@ class ToReadItem(BaseItem):
         self.url = url
 
     def __str__(self):
-        return '{0}: {1} at {2}'.format(
+        return '{0}: {1} {2}'.format(
             super().__str__(),
             self.heading,
             self.url,
