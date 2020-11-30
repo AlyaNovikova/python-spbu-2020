@@ -16,7 +16,7 @@ async def get_responses(number):
     :return: Returns the request result to the user
     """
     async with aiohttp.ClientSession() as session:
-        url = f'https://jsonplaceholder.typicode.com/todos/{number}'
+        url = 'https://jsonplaceholder.typicode.com/todos/{0}'.format(number)
 
         async with session.get(url) as response:
             response_status = response.status
@@ -26,8 +26,6 @@ async def get_responses(number):
 
     content_encoding_key = 'Content-Encoding'
     if content_encoding_key in response_headers:
-        del response_headers[content_encoding_key]
+        response_headers.pop(content_encoding_key)
 
-    return Response(content=response_content,
-                    status_code=response_status,
-                    headers=response_headers)
+    return Response(content=response_content, status_code=response_status, headers=response_headers)
